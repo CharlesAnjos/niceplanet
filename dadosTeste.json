@@ -1,0 +1,284 @@
+{
+"produtores": [
+	{
+		"idProdutor" : 1,
+		"registroIndividual" : "353.920.370-20",
+		"nomeProdutor" : "Manuel Theo da Mata",
+		"status" : 1
+	},
+	{
+		"idProdutor" : 2,
+		"registroIndividual" : "464.280.050-69",
+		"nomeProdutor" : "Petterson Abade",
+		"status" : 0
+	},
+	{
+		"idProdutor" : 3,
+		"registroIndividual" : "497.595.602-08",
+		"nomeProdutor" : "Evelyn Camila Raquel Ramos",
+		"status" : 1
+	},
+	{
+		"idProdutor" : 4,
+		"registroIndividual" : "307.878.410-05",
+		"nomeProdutor" : "Benjamin Bruno Nogueira",
+		"status" : 1
+	},
+	{
+		"idProdutor" : 5,
+		"registroIndividual" : "029.958.740-10",
+		"nomeProdutor" : null,
+		"status" : 0
+	},
+	{
+		"idProdutor" : 6,
+		"registroIndividual" : "224.963.380-07",
+		"nomeProdutor" : "Renan Fábio Kaique Porto",
+		"status" : 1
+	},
+	{
+		"idProdutor" : 7,
+		"registroIndividual" : "",
+		"nomeProdutor" : "Daniel Vitor",
+		"status" : 1
+	},
+	{
+		"idProdutor" : 8,
+		"registroIndividual" : "078.573.730-87",
+		"nomeProdutor" : "Valentina Esther Jéssica Alves",
+		"status" : 1
+	}
+],
+"vinculos": [
+	{
+		"idVinculo" : 1,
+		"idPropriedade" : 9,
+		"idProdutor" : 4
+	},
+	{
+		"idVinculo" : 2,
+		"idPropriedade" : 1,
+		"idProdutor" : 1
+	},
+	{
+		"idVinculo" : 3,
+		"idPropriedade" : 3,
+		"idProdutor" : 8
+	},
+	{
+		"idVinculo" : 4,
+		"idPropriedade" : 2,
+		"idProdutor" : 4
+	},
+	{
+		"idVinculo" : 5,
+		"idPropriedade" : 4,
+		"idProdutor" : 1
+	},
+	{
+		"idVinculo" : 6,
+		"idPropriedade" : 4,
+		"idProdutor" : 3
+	},
+	{
+		"idVinculo" : 7,
+		"idPropriedade" : 4,
+		"idProdutor" : 2
+	},
+	{
+		"idVinculo" : 8,
+		"idPropriedade" : 5,
+		"idProdutor" : 6
+	},
+	{
+		"idVinculo" : 9,
+		"idPropriedade" : 6,
+		"idProdutor" : 7
+	},
+	{
+		"idVinculo" : 10,
+		"idPropriedade" : 7,
+		"idProdutor" : 3
+	},
+	{
+		"idVinculo" : 11,
+		"idPropriedade" : 2,
+		"idProdutor" : 1
+	},
+	{
+		"idVinculo" : 12,
+		"idPropriedade" : 3,
+		"idProdutor" : 5
+	},
+	{
+		"idVinculo" : 13,
+		"idPropriedade" : 3,
+		"idProdutor" : 2
+	},
+	{
+		"idVinculo" : 14,
+		"idPropriedade" : 5,
+		"idProdutor" : 7
+	},
+	{
+		"idVinculo" : 15,
+		"idPropriedade" : 2,
+		"idProdutor" : 7
+	},
+	{
+		"idVinculo" : 16,
+		"idPropriedade" : 3,
+		"idProdutor" : 1
+	},
+	{
+		"idVinculo" : 17,
+		"idPropriedade" : 1,
+		"idProdutor" : 2
+	},
+	{
+		"idVinculo" : 18,
+		"idPropriedade" : 1,
+		"idProdutor" : 5
+	},
+	{
+		"idVinculo" : 19,
+		"idPropriedade" : 2,
+		"idProdutor" : 3
+	},
+	{
+		"idVinculo" : 20,
+		"idPropriedade" : 3,
+		"idProdutor" : 5
+	},
+	{
+		"idVinculo" : 21,
+		"idPropriedade" : 4,
+		"idProdutor" : 5
+	}
+],
+"usuarios": [
+	{
+		"idUsuario" : 1,
+		"nomeUsuario" : "Administrador",
+		"emailUsuario" : "administrado@email.com",
+		"senhaUsuario" : "root",
+		"descricaoCargo" : "Administrador da NicePlanet",
+		"industria" : "NicePlanet"
+	},
+	{
+		"idUsuario" : 2,
+		"nomeUsuario" : "Denys Fernades",
+		"emailUsuario" : "denysfernades@email.com",
+		"senhaUsuario" : "coxinha123",
+		"descricaoCargo" : "Desenvolvedor Mobile",
+		"industria" : "NicePlanet"
+	},
+	{
+		"idUsuario" : 3,
+		"nomeUsuario" : "Pedro Paulo",
+		"emailUsuario" : "pedropaulo@email.com",
+		"senhaUsuario" : "pastelDeFlango",
+		"descricaoCargo" : null,
+		"industria" : "Frigorífico 1"
+	},
+	{
+		"idUsuario" : 4,
+		"nomeUsuario" : "Natanna Rocha",
+		"emailUsuario" : "natannarocha@email.com",
+		"senhaUsuario" : null,
+		"descricaoCargo" : "Empacotadora",
+		"industria" : "Curtume 1"
+	}
+],
+"propriedades": [
+	{
+		"idPropriedade" : 1,
+		"nomePropriedade" : "Fazenda Bela Vista",
+		"numeroCar" : "TO-15235304-5381E1396BB4E6TFBA16CA5AE14745213",
+		"uf" : "TO",
+		"municipio" : "Palmas",
+		"pais" : "Brasil",
+		"status" : 1,
+		"liberado" : 1
+	},
+	{
+		"idPropriedade" : 2,
+		"nomePropriedade" : "Fazenda Boi Dourado 1",
+		"numeroCar" : "PA-1714302-D3C4RFCWE4Q32E2FEWR34FCEW2E2323",
+		"uf" : null,
+		"municipio" : "Redenção",
+		"pais" : "Brasil",
+		"status" : 1,
+		"liberado" : 0
+	},
+	{
+		"idPropriedade" : 3,
+		"nomePropriedade" : "Fazenda Deus é Fiel",
+		"numeroCar" : null,
+		"uf" : "AM",
+		"municipio" : "Barreirinha",
+		"pais" : "Brasil",
+		"status" : 0,
+		"liberado" : 2
+	},
+	{
+		"idPropriedade" : 4,
+		"nomePropriedade" : "Fazenda Sol Nascente",
+		"numeroCar" : "MG-2132633-E32F45G53AC8423BRY23UBR3Y9U",
+		"uf" : "MG",
+		"municipio" : "Belo Horizonte",
+		"pais" : "Brasil",
+		"status" : 1,
+		"liberado" : 1
+	},
+	{
+		"idPropriedade" : 5,
+		"nomePropriedade" : null,
+		"numeroCar" : "GO-5346543-FDESG45321CEWRQ543WQCWDVRE43WEQCEC",
+		"uf" : "GO",
+		"municipio" : "Morrinhos",
+		"pais" : "Brasil",
+		"status" : 1,
+		"liberado" : 0
+	},
+	{
+		"idPropriedade" : 6,
+		"nomePropriedade" : "Fazenda Bananal",
+		"numeroCar" : "MA-2102804-2PNU380GY64UHORJNIPM9J84Y5UHTRJFK",
+		"uf" : "MA",
+		"municipio" : "Carolina",
+		"pais" : "Brasil",
+		"status" : 0,
+		"liberado" : 2
+	},
+	{
+		"idPropriedade" : 7,
+		"nomePropriedade" : "Fazenda Boi Dourado 2",
+		"numeroCar" : null,
+		"uf" : "TO",
+		"municipio" : "Porto Nacional",
+		"pais" : "Brasil",
+		"status" : 1,
+		"liberado" : 1
+	},
+	{
+		"idPropriedade" : 8,
+		"nomePropriedade" : "Fazenda Vale Estrelado",
+		"numeroCar" : "BA-1501204-5381E32RQ4G3BWTRVE2343G5RECX3245RE",
+		"uf" : "BA",
+		"municipio" : "Salvador",
+		"pais" : "Brasil",
+		"status" : 1,
+		"liberado" : 0
+	},
+	{
+		"idPropriedade" : 9,
+		"nomePropriedade" : "Fazenda do Vovô José",
+		"numeroCar" : "AP-5435423-43T5YTRREG4567JYTREW435Y67YTGF3245",
+		"uf" : "AP",
+		"municipio" : null,
+		"pais" : "Brasil",
+		"status" : 1,
+		"liberado" : 2
+	}
+]}
