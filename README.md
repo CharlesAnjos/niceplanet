@@ -1,13 +1,19 @@
 # Teste Técnico FullStack - NicePlanet
 
-
-
 ## Passos
-- providenciar o BD
-- criar a API
-- acessar a API para exibir os dados
+- [x] providenciar o BD
+- [] criar a API
+- [] acessar a API para exibir os dados
 
-## Iniciar o BD
+## Execução do projeto
+
+### Requisitos para execução do projeto
+nodejs
+docker
+docker-compose
+
+### Iniciar o BD
+Entre no diretório db
 ```
 $ docker compose up
 ```
