@@ -11,7 +11,7 @@ export const router = createRouter({
         { path: '/login', component: LoginView },
         { path: '/buscar-propriedade', component: BuscaPropriedadeView },
         { path: '/listar-analises', component: ListaAnalisesView },
-        { path: '/detalhe-analise', component: DetalheAnaliseView },
+        { path: '/detalhe-analise/:id', component: DetalheAnaliseView },
     ]
 });
 

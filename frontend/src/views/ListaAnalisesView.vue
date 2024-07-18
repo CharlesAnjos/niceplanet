@@ -1,6 +1,7 @@
 <script setup>
 import { storeToRefs } from 'pinia';
 import { useAnalisesStore } from '@/stores';
+import { RouterLink } from 'vue-router';
 import SidebarView from './SidebarView.vue';
 
 const estadoMonitoramento = ['Bloqueado', 'Liberado', 'Alerta']
@@ -10,7 +11,7 @@ const { analises } = storeToRefs(analisesStore);
 
 analisesStore.getAll();
 
-function deletaAnalise(id){
+function deletaAnalise(id) {
   analisesStore.delete(id);
   analisesStore.getAll();
 }
@@ -43,11 +44,11 @@ function deletaAnalise(id){
                 <td>{{ analise.municipio }} - {{ analise.uf }}</td>
                 <td>{{ estadoMonitoramento[analise.estadoMonitoramento] }}</td>
                 <td>
-                  <button class="btn btn-dark mr-2">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn btn-dark mr-2" 
-                  @click="deletaAnalise(analise.id)">
+                  <RouterLink :to="{path: '/detalhe-analise/' + analise.id}" 
+                  class="btn btn-dark mr-2">
+                    <i class="bi bi-search"></i>
+                  </RouterLink>
+                  <button class="btn btn-dark mr-2" @click="deletaAnalise(analise.id)">
                     <i class="bi bi-trash"></i>
                   </button>
                 </td>
