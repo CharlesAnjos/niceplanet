@@ -10,6 +10,11 @@ const { analises } = storeToRefs(analisesStore);
 
 analisesStore.getAll();
 
+function deletaAnalise(id){
+  analisesStore.delete(id);
+  analisesStore.getAll();
+}
+
 </script>
 
 <template>
@@ -42,7 +47,7 @@ analisesStore.getAll();
                     <i class="bi bi-pencil-square"></i>
                   </button>
                   <button class="btn btn-dark mr-2" 
-                  @click="analisesStore.delete(analise.id)">
+                  @click="deletaAnalise(analise.id)">
                     <i class="bi bi-trash"></i>
                   </button>
                 </td>

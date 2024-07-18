@@ -31,7 +31,8 @@ router.delete('/deletar/:id', async (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   try {
       const id = req.params.id;
-      const data = await AnaliseAutomaticaModel.destroy({ where: { id: id } });
+      await AnaliseAutomaticaModel.destroy({ where: { id: id } });
+      const data = await AnaliseAutomaticaModel.findAll();
       res.json(data);
   }
   catch (error) {
