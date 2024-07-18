@@ -16,6 +16,7 @@ app.use(jwt());
 const produtoresRoutes = require('./routes/produtores.routes');
 const usuariosRoutes = require('./routes/usuarios.routes');
 const propriedadesRoutes = require('./routes/propriedades.routes');
+const analiseAutomaticaRoutes = require('./routes/analiseAutomatica.routes');
 
 app.use(errorHandler);
 
@@ -30,6 +31,7 @@ function authenticate(req, res, next) {
 app.use('/usuarios',usuariosRoutes);
 app.use('/produtores',produtoresRoutes);
 app.use('/propriedades',propriedadesRoutes);
+app.use('/analises',analiseAutomaticaRoutes);
 
 app.listen(3000, () => {
   console.log(`Servidor iniciado na porta ${3000}`);
