@@ -14,6 +14,7 @@ app.use(cors());
 app.use(jwt());
 
 const produtoresRoutes = require('./routes/produtores.routes');
+const usuariosRoutes = require('./routes/usuarios.routes');
 const propriedadesRoutes = require('./routes/propriedades.routes');
 
 app.use(errorHandler);
@@ -26,6 +27,7 @@ function authenticate(req, res, next) {
       .catch(next);
 }
 
+app.use('/usuarios',usuariosRoutes);
 app.use('/produtores',produtoresRoutes);
 app.use('/propriedades',propriedadesRoutes);
 
