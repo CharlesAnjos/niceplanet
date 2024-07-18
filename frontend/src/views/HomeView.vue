@@ -1,12 +1,7 @@
 <script setup>
 import { storeToRefs } from 'pinia';
-import { RouterLink, RouterView } from 'vue-router';
-import { useAuthStore, useUsuariosStore } from '@/stores';
+import { useUsuariosStore } from '@/stores';
 import SidebarView from './SidebarView.vue';
-
-const authStore = useAuthStore();
-const { usuario: authUser } = storeToRefs(authStore);
-console.log(authUser);
 
 const usuariosStore = useUsuariosStore();
 const { usuarios } = storeToRefs(usuariosStore);

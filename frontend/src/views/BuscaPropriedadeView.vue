@@ -1,15 +1,26 @@
 <script setup>
+// imports do form
 import { Form, Field } from 'vee-validate';
 import * as Yup from 'yup';
 import SidebarView from './SidebarView.vue';
 
+// imports da consulta
+import { storeToRefs } from 'pinia';
+import { usePropriedadeStore } from '@/stores';
+
+const estadoMonitoramento = ['Bloqueado', 'Liberado', 'Alerta']
+
+// script do form
 const schema = Yup.object().shape({
   car: Yup.string().required('Número do CAR é obrigatório!')
 });
 
+// script da consulta
+const propriedadeStore = usePropriedadeStore();
+const { propriedade } = storeToRefs(propriedadeStore);
+
 function onSubmit(values) {
-  const { car } = values;
-  console.log(car);
+  propriedadeStore.getPropriedadePeloCAR(values.car);
 }
 </script>
 
@@ -35,6 +46,16 @@ function onSubmit(values) {
           </div>
           <div v-if="errors.apiError" class="alert alert-danger mt-3 mb-0">{{ errors.apiError }}</div>
         </Form>
+        <div v-if="propriedade">
+          <h4>Resultados da busca:</h4>
+          <ul>
+            <li><p>Nome da Propriedade: {{propriedade.nomePropriedade}}</p></li>
+            <li><p>Número de cadastro ambiental rural: {{propriedade.numeroCar}}</p></li>
+            <li><p>Produtores vinculados ao CAR: </p></li>
+            <li><p>Local: {{propriedade.municipio}} - {{propriedade.uf}}</p></li>
+            <li><p>Estado de monitoramento: {{ estadoMonitoramento[propriedade.liberado] }}</p></li>
+          </ul>
+        </div>
       </div>
     </main>
   </div>

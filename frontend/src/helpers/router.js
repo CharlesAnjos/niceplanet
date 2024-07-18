@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import { useAuthStore } from '@/stores';
+import { useAuthStore, usePropriedadeStore } from '@/stores';
 import { HomeView, LoginView, BuscaPropriedadeView, ListaAnalisesView, DetalheAnaliseView } from '@/views';
 
 export const router = createRouter({
@@ -16,7 +16,11 @@ export const router = createRouter({
 });
 
 router.beforeEach(async (to) => {
-    // redirect to login page if not logged in and trying to access a restricted page
+    // limpa os dados da última propriedade buscada no estado da aplicação
+    const propriedadeStore = usePropriedadeStore();
+    propriedadeStore.clear();
+
+    // redireciona para a página de login caso não autenticado
     const publicPages = ['/login'];
     const authRequired = !publicPages.includes(to.path);
     const auth = useAuthStore();
