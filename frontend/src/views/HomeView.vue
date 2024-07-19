@@ -1,12 +1,5 @@
 <script setup>
-import { storeToRefs } from 'pinia';
-import { useUsuariosStore } from '@/stores';
 import SidebarView from './SidebarView.vue';
-
-const usuariosStore = useUsuariosStore();
-const { usuarios } = storeToRefs(usuariosStore);
-
-usuariosStore.getAll();
 </script>
 
 <template>
