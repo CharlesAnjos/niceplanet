@@ -15,12 +15,6 @@ Configurar os contâineres com o comando
   docker compose build
 ```
 
-## Configuração
-Configurar os contâineres com o comando
-```
-  docker compose build
-```
-
 ## Execução
 Executar os contâineres com o comando
 ```
