@@ -30,8 +30,7 @@ function onSubmit(values) {
 
     <main class="col-md-9 ml-sm-auto col-lg-9 px-md-4" role="main">
       <div class="justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
-        <h3 class="h2">Bem-vindo!</h3>
-        <p>Busca de Propriedades:</p>
+        <h3 class="h2">Busca de Propriedades</h3>
         <Form @submit="onSubmit" :validation-schema="schema" v-slot="{ errors, isSubmitting }">
           <div class="form-group">
             <label>Entre com o número do CAR</label>

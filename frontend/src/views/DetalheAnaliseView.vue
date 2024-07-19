@@ -20,7 +20,7 @@ analiseStore.getAnalise(route.params.id);
     <main class="col-md-9 ml-sm-auto col-lg-9 px-md-4" role="main">
       <div class="justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
         <div v-if="analise">
-          <h3 class="h2">Detalhes da Análise:</h3>
+          <h3 class="h2">Detalhes da Análise</h3>
           <ul>
             <li>
               <p>Nome do Produtor: {{ analise.produtorNome }}</p>
