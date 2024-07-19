@@ -4,21 +4,20 @@ const cors = require('cors');
 const jwt = require('./_helpers/jwt');
 const errorHandler = require('./_helpers/error-handler');
 const bodyParser = require("body-parser");
+
 const servicoUsuario = require('./services/usuario.service');
-
-app.use(bodyParser.urlencoded({ extended: true}));
-app.use(express.json());
-app.use(cors());
-
-app.use(jwt());
-
 const produtoresRoutes = require('./routes/produtores.routes');
 const usuariosRoutes = require('./routes/usuarios.routes');
 const propriedadesRoutes = require('./routes/propriedades.routes');
 const analiseAutomaticaRoutes = require('./routes/analiseAutomatica.routes');
 
+app.use(bodyParser.urlencoded({ extended: true}));
+app.use(express.json());
+app.use(cors());
+app.use(jwt());
 app.use(errorHandler);
 
+// bloco de autenticação
 app._router.post('/authenticate', authenticate);
 
 function authenticate(req, res, next) {
@@ -26,6 +25,7 @@ function authenticate(req, res, next) {
       .then(user => res.json(user))
       .catch(next);
 }
+// bloco de autenticação
 
 app.use('/usuarios',usuariosRoutes);
 app.use('/produtores',produtoresRoutes);

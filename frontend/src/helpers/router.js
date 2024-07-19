@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
-import { useAuthStore, usePropriedadeStore } from '@/stores';
+import { useAuthStore, usePropriedadeStore, useAnaliseStore } from '@/stores';
 import { HomeView, LoginView, BuscaPropriedadeView, ListaAnalisesView, DetalheAnaliseView } from '@/views';
 
 export const router = createRouter({
@@ -19,6 +18,8 @@ router.beforeEach(async (to) => {
     // limpa os dados da última propriedade buscada no estado da aplicação
     const propriedadeStore = usePropriedadeStore();
     propriedadeStore.clear();
+    const analiseStore = useAnaliseStore();
+    analiseStore.clear();
 
     // redireciona para a página de login caso não autenticado
     const publicPages = ['/login'];

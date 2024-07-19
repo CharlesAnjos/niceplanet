@@ -1,9 +1,12 @@
 <script setup>
+// imports validação
 import { Form, Field } from 'vee-validate';
 import * as Yup from 'yup';
 
+// import autenticação
 import { useAuthStore } from '@/stores';
 
+// schema de validação usado pelo validador
 const schema = Yup.object().shape({
   emailUsuario: Yup.string().required('Email é obrigatório!'),
   senhaUsuario: Yup.string().required('Senha é obrigatória!')
@@ -30,7 +33,7 @@ function onSubmit(values, { setErrors }) {
         </div>
         <div class="form-group">
           <label>Senha</label>
-          <Field name="senhaUsuario" type="senhaUsuario" class="form-control"
+          <Field name="senhaUsuario" type="password" class="form-control"
             :class="{ 'is-invalid': errors.senhaUsuario }" />
           <div class="invalid-feedback">{{ errors.senhaUsuario }}</div>
         </div>
