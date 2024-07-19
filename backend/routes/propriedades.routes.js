@@ -48,8 +48,8 @@ router.get('/car/:car', async (req, res) => {
       ],
       });
       await AnaliseAutomaticaModel.create({
-        produtorNome: '',
-        produtorCpf: '',
+        produtorNome: data.produtores[0].nomeProdutor,
+        produtorCpf: data.produtores[0].registroIndividual,
         propriedadeNome: data.nomePropriedade,
         car: data.numeroCar,
         municipio: data.municipio,

@@ -45,15 +45,32 @@ function onSubmit(values) {
           </div>
           <div v-if="errors.apiError" class="alert alert-danger mt-3 mb-0">{{ errors.apiError }}</div>
         </Form>
-        <div v-if="propriedade">
+        <div class="table-responsive" v-if="propriedade">
           <h4>Resultados da busca:</h4>
-          <ul>
-            <li><p>Nome da Propriedade: {{propriedade.nomePropriedade}}</p></li>
-            <li><p>Número de cadastro ambiental rural: {{propriedade.numeroCar}}</p></li>
-            <li><p>Produtores vinculados ao CAR: </p></li>
-            <li><p>Local: {{propriedade.municipio}} - {{propriedade.uf}}</p></li>
-            <li><p>Estado de monitoramento: {{ estadoMonitoramento[propriedade.liberado] }}</p></li>
-          </ul>
+          <table class="table table-sm">
+            <tbody>
+              <tr>
+                <td>Nome da Propriedade:</td>
+                <td>{{ propriedade.nomePropriedade }}</td>
+              </tr>
+              <tr>
+                <td>Número de cadastro ambiental rural:</td>
+                <td>{{ propriedade.numeroCar }}</td>
+              </tr>
+              <tr v-for="produtor in propriedade.produtores" :key="produtor.id">
+                <td v-if="produtor.idProdutor === propriedade.produtores[0].idProdutor" :rowspan="propriedade.produtores.length">Produtor vinculado ao CAR:</td>
+                <td>{{ produtor.nomeProdutor }} ({{ produtor.registroIndividual }})</td>
+              </tr>
+              <tr>
+                <td>Local:</td>
+                <td>{{ propriedade.municipio }} - {{ propriedade.uf }}</td>
+              </tr>
+              <tr>
+                <td>Estado de monitoramento:</td>
+                <td>{{ estadoMonitoramento[propriedade.liberado] }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </main>
