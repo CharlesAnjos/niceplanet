@@ -1,0 +1,54 @@
+services:
+  niceplanet_front:
+    container_name: niceplanet_front
+    build: './frontend'
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./frontend/public:/docker-vue/public
+      - ./frontend/src:/docker-vue/src
+      - ./frontend/package.json:/docker-vue/package.json
+      - ./frontend/package-lock.json:/docker-vue/package-lock.json
+      - ./frontend/.env:/docker-vue/.env
+      - ./frontend/index.html:/docker-vue/index.html
+
+  niceplanet_backend:
+    container_name: niceplanet_backend
+    build: './backend'
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend/_helpers:/docker-node/_helpers
+      - ./backend/connection:/docker-node/connection
+      - ./backend/models:/docker-node/models
+      - ./backend/routes:/docker-node/routes
+      - ./backend/services:/docker-node/services
+      - ./backend/config.json:/docker-node/config.json
+      - ./backend/index.js:/docker-node/index.js
+      - ./backend/package-lock.json:/docker-node/package-lock.json
+      - ./backend/package.json:/docker-node/package.json
+
+  niceplanet_db:
+    container_name: niceplanet_db
+    image: mysql:9
+    restart: always
+    environment:
+      MYSQL_PASSWORD: pass
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: niceplanet
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db/testeFullStack.sql:/docker-entrypoint-initdb.d/testeFullStack.sql:ro
+      - mysql_data:/var/lib/mysql
+
+  adminer:
+    container_name: niceplanet_adminer
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  mysql_data:
+    driver: local

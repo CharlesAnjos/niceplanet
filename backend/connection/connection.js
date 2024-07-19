@@ -5,7 +5,7 @@ const sequelize = new Sequelize(
   'root',
   'pass',
   {
-    host: 'localhost',
+    host: 'niceplanet_db',
     dialect: 'mysql'
   }
 );

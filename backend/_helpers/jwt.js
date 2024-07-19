@@ -7,7 +7,7 @@ function jwt() {
     const { secret } = config;
     return expressjwt({ secret, algorithms: ['HS256'] }).unless({
         path: [
-            // public routes that don't require authentication
+            // rotas públicas que não requerem autenticação
             '/authenticate'
         ]
     });

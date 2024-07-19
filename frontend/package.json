@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Frontend do Teste Técnico da NicePlanet",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 5000 --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview --port 5050",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
