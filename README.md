@@ -22,7 +22,7 @@ Executar os contâineres com o comando
 ```
 
 ## Acesso ao Frontend
-Após a configuração e execução dos contâineres, acesse o frontend através do endereço http://locahost:5000
+Após a configuração e execução dos contâineres, acesse o frontend através do endereço http://localhost:5000
 
 ## Dados de login
 ```
