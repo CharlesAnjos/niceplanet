@@ -43,7 +43,7 @@ function deletaAnalise(id) {
                 <td>{{ analise.municipio }} - {{ analise.uf }}</td>
                 <td>{{ estadoMonitoramento[analise.estadoMonitoramento] }}</td>
                 <td>
-                  <RouterLink :to="{path: '/detalhe-analise/' + analise.id}" 
+                  <RouterLink :to="'/detalhe-analise/' + analise.id" 
                   class="btn btn-dark mr-2">
                     <i class="bi bi-search"></i>
                   </RouterLink>
