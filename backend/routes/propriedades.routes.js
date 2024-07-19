@@ -2,13 +2,20 @@ const express = require('express');
 const router = express.Router();
 const PropriedadeModel = require('../models/propriedade.model');
 const AnaliseAutomaticaModel = require('../models/analiseautomatica.model');
+const ProdutorModel = require('../models/produtor.model');
 
 module.exports = router;
 
 router.get('/listar', async (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   try {
-      const data = await PropriedadeModel.findAll();
+      const data = await PropriedadeModel.findAll({
+        include: [{
+          model: ProdutorModel,
+          as: "produtores",
+        },
+      ],
+      });
       res.json(data);
   }
   catch (error) {
@@ -32,7 +39,14 @@ router.get('/car/:car', async (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   try {
       const car = req.params.car;
-      const data = await PropriedadeModel.findOne({ where: { numeroCar: car } });
+      const data = await PropriedadeModel.findOne({ 
+        where: { numeroCar: car },
+        include: [{
+          model: ProdutorModel,
+          as: "produtores",
+        },
+      ],
+      });
       await AnaliseAutomaticaModel.create({
         produtorNome: '',
         produtorCpf: '',
